@@ -63,6 +63,12 @@ _subresources={
 "PATH:DoorHole": {
 "import/skip_import": true
 },
+"PATH:DoorHole_001": {
+"import/skip_import": true
+},
+"PATH:GarageInterior": {
+"import/skip_import": true
+},
 "PATH:HouseHole": {
 "import/skip_import": true
 },
