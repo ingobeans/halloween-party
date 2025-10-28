@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://borjqwhmcjbuq"]
+
+[ext_resource type="PackedScene" uid="uid://2ypk55cnqk84" path="res://assets/house.blend" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://dd5y0aksdsy8" path="res://assets/door.blend" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://b16d8bdcr8emx" path="res://player.tscn" id="4_aqk2v"]
+[ext_resource type="LightmapGIData" uid="uid://cx7o8jfcup64d" path="res://world.lmbake" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://cv1cyxcg8bagu" path="res://lamp_post.tscn" id="5_dwbse"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fj7yv"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.0013045276, 0, 0.05542486, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+sun_angle_max = 0.0
+
+[sub_resource type="Sky" id="Sky_tlwt5"]
+sky_material = SubResource("ProceduralSkyMaterial_fj7yv")
+
+[sub_resource type="Environment" id="Environment_aqk2v"]
+background_mode = 2
+sky = SubResource("Sky_tlwt5")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.0
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.009289893, 0.01126191, 0.01477998, 1)
+fog_density = 0.053
+
+[node name="World" type="Node3D"]
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+light_data = ExtResource("5_036b0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, -0.036025047, 1.8844128, 0)
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_aqk2v")
+
+[node name="house" parent="." instance=ExtResource("1_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6329017, 0)
+
+[node name="door" parent="." instance=ExtResource("2_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047796182, 1.5789709, 5.400947)
+
+[node name="Player" parent="." instance=ExtResource("4_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.033567, 16.480156)
+
+[node name="lamp_post" parent="." instance=ExtResource("5_dwbse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.929153, 0.35287434, 27.158089)
+
+[node name="lamp_post2" parent="." instance=ExtResource("5_dwbse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.173904, 0.35287434, 27.158089)
+
+[node name="lamp_post3" parent="." instance=ExtResource("5_dwbse")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 29.173904, 0.35287434, 52.28624)
+
+[node name="lamp_post4" parent="." instance=ExtResource("5_dwbse")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -38.929153, 0.35287434, 52.286232)

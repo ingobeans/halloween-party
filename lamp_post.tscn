@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv1cyxcg8bagu"]
+
+[ext_resource type="PackedScene" uid="uid://bw2khnrp8cpq8" path="res://assets/lamp_post.blend" id="1_py3xm"]
+
+[node name="lamp_post" instance=ExtResource("1_py3xm")]
+
+[node name="Point" parent="LampPost" index="0"]
+light_bake_mode = 1
