@@ -83,6 +83,9 @@ _subresources={
 "PATH:HouseHole": {
 "import/skip_import": true
 },
+"PATH:Icosphere": {
+"import/skip_import": true
+},
 "PATH:WindowHole": {
 "import/skip_import": true
 }

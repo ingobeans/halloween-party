@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://borjqwhmcjbuq"]
 
 [ext_resource type="PackedScene" uid="uid://2ypk55cnqk84" path="res://assets/house.blend" id="1_fj7yv"]
-[ext_resource type="PackedScene" uid="uid://dd5y0aksdsy8" path="res://assets/door.blend" id="2_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://b16d8bdcr8emx" path="res://player.tscn" id="4_aqk2v"]
 [ext_resource type="LightmapGIData" uid="uid://cx7o8jfcup64d" path="res://world.lmbake" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://cv1cyxcg8bagu" path="res://lamp_post.tscn" id="5_dwbse"]
+[ext_resource type="PackedScene" uid="uid://cn1sadfd4ifdu" path="res://door.tscn" id="6_dwbse"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fj7yv"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -42,9 +42,6 @@ environment = SubResource("Environment_aqk2v")
 
 [node name="house" parent="." instance=ExtResource("1_fj7yv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6329017, 0)
-
-[node name="door" parent="." instance=ExtResource("2_tlwt5")]
-transform = Transform3D(-0.45523417, 0, 0.89037174, 0, 1, 0, -0.89037174, 0, -0.45523417, -0.047796182, 1.5789709, 5.400947)
 
 [node name="Player" parent="." instance=ExtResource("4_aqk2v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.033567, 16.480156)
@@ -84,5 +81,8 @@ light_energy = 0.34
 shadow_enabled = true
 omni_range = 11.786
 
-[node name="door2" parent="." instance=ExtResource("2_tlwt5")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.58754, 1.563127, -3.1155026)
+[node name="Door" parent="." instance=ExtResource("6_dwbse")]
+transform = Transform3D(-3.5372246e-08, 0, 0.8092227, 0, 0.8092227, 0, -0.8092227, 0, -3.5372246e-08, -8.614647, 1.3051668, -2.9494734)
+
+[node name="Door2" parent="." instance=ExtResource("6_dwbse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047796182, 1.5789709, 5.400947)
