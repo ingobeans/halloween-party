@@ -39,6 +39,11 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
+"ArmchairLegs": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/armchair_legs.tres",
+"use_external/path": "uid://clvhys2d8x3hq"
+},
 "Grass": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://materials/grass.tres",
@@ -60,10 +65,16 @@ _subresources={
 }
 },
 "nodes": {
+"PATH:BedroomInterior": {
+"import/skip_import": true
+},
 "PATH:DoorHole": {
 "import/skip_import": true
 },
 "PATH:DoorHole_001": {
+"import/skip_import": true
+},
+"PATH:DoorHole_002": {
 "import/skip_import": true
 },
 "PATH:GarageInterior": {
