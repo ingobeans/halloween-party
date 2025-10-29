@@ -84,5 +84,8 @@ omni_range = 11.786
 [node name="Door" parent="." instance=ExtResource("6_dwbse")]
 transform = Transform3D(-3.5372246e-08, 0, 0.8092227, 0, 0.8092227, 0, -0.8092227, 0, -3.5372246e-08, -8.614647, 1.3051668, -2.9494734)
 
+[node name="Door3" parent="." instance=ExtResource("6_dwbse")]
+transform = Transform3D(-3.5372246e-08, 0, 0.8092227, 0, 0.8092227, 0, -0.8092227, 0, -3.5372246e-08, -8.614647, 1.3051668, 3.257004)
+
 [node name="Door2" parent="." instance=ExtResource("6_dwbse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047796182, 1.5789709, 5.400947)
