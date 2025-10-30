@@ -5,12 +5,13 @@
 [ext_resource type="Material" uid="uid://ds6mfgqepkj3f" path="res://materials/ghost.tres" id="2_l7q8h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gvr31"]
-size = Vector3(1.4335938, 1.8412476, 1.3144531)
+size = Vector3(2.3085938, 1.8412476, 2.342041)
 
 [node name="GhostPumpkin" instance=ExtResource("1_7hr3l")]
 script = ExtResource("2_0hu75")
 
 [node name="Sphere" parent="." index="0"]
+visible = false
 material_override = ExtResource("2_l7q8h")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="1"]

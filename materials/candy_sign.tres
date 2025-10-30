@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://civxrvnletool"]
+
+[ext_resource type="Texture2D" uid="uid://yfeglccwujxv" path="res://assets/candy_sign.png" id="1_pcu2b"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_pcu2b")

@@ -44,10 +44,20 @@ _subresources={
 "use_external/fallback_path": "res://materials/armchair_legs.tres",
 "use_external/path": "uid://clvhys2d8x3hq"
 },
+"CandySign": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/candy_sign.tres",
+"use_external/path": "uid://civxrvnletool"
+},
 "Grass": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://materials/grass.tres",
 "use_external/path": "uid://c44h13u5123b"
+},
+"Sign": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/sign.tres",
+"use_external/path": "uid://cc2g6vsde1t0x"
 },
 "Street": {
 "use_external/enabled": true,
@@ -56,6 +66,7 @@ _subresources={
 },
 "Window": {
 "use_external/enabled": true,
+"use_external/fallback_path": "res://materials/glass.tres",
 "use_external/path": "uid://doew3e2wapkvw"
 },
 "Window.001": {
@@ -68,6 +79,9 @@ _subresources={
 "PATH:BedroomInterior": {
 "import/skip_import": true
 },
+"PATH:CandyStoreInterior": {
+"import/skip_import": true
+},
 "PATH:DoorHole": {
 "import/skip_import": true
 },
@@ -75,6 +89,9 @@ _subresources={
 "import/skip_import": true
 },
 "PATH:DoorHole_002": {
+"import/skip_import": true
+},
+"PATH:DoorHole_003": {
 "import/skip_import": true
 },
 "PATH:GarageInterior": {
@@ -87,6 +104,9 @@ _subresources={
 "import/skip_import": true
 },
 "PATH:WindowHole": {
+"import/skip_import": true
+},
+"PATH:WindowHole_001": {
 "import/skip_import": true
 }
 }

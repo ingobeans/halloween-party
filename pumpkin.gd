@@ -5,8 +5,10 @@ extends Node3D
 
 var could_interact = false
 var carried = false
+var done = false
 
 func _process(_delta: float) -> void:
+	if done:return;
 	var overlapping = area.get_overlapping_bodies() 
 	var can_interact = overlapping and visibility.is_on_screen()
 	if can_interact and !could_interact:
@@ -16,3 +18,5 @@ func _process(_delta: float) -> void:
 	could_interact = can_interact
 	if can_interact and Input.is_action_just_pressed("interact"):
 		overlapping[0].carry(self)
+		if carried:
+			done = true

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cc2g6vsde1t0x"]
+
+[ext_resource type="Texture2D" uid="uid://da7aphhnr2kw5" path="res://assets/sign.png" id="1_6i8hj"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_6i8hj")

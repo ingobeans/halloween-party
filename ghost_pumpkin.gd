@@ -8,9 +8,10 @@ extends Node3D
 
 var could_interact = false
 var carried = false
+var full = false
 
 func _process(_delta: float) -> void:
-	model.visible = player.carrying != null
+	model.visible = player.carrying != null and not full
 	if !model.visible:
 		return
 	var overlapping = area.get_overlapping_bodies() 
@@ -22,6 +23,7 @@ func _process(_delta: float) -> void:
 	could_interact = can_interact
 	if can_interact and Input.is_action_just_pressed("interact"):
 		var pumpkin = player.carrying
+		full = true
 		player.carrying = null
 		pumpkin.reparent(self)
 		pumpkin.position = Vector3.ZERO
