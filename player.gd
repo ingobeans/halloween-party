@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export_range(1, 35, 1) var speed: float = 10 
 @export_range(10, 400, 1) var acceleration: float = 100 
 
-@export var MAX_STEP_UP = 1
+@export var MAX_STEP_UP = 0.2
 
 @export_range(0.1, 3.0, 0.1) var jump_height: float = 1 
 @export_range(0.1, 3.0, 0.1, "or_greater") var camera_sens: float = 1
@@ -26,9 +26,19 @@ var jump_vel: Vector3
 
 @onready var camera: Camera3D = $Camera3D
 
+var carrying = null
+
 func teleport(spot:Node3D):
 	global_position = spot.global_position
 	camera.global_rotation = spot.global_rotation
+
+func carry(object:Node3D):
+	if carrying == null:
+		carrying = object
+		object.carried = true
+		object.reparent($Camera3D/Hand)
+		object.position = Vector3.ZERO
+		object.rotation = Vector3.ZERO
 
 func _ready() -> void:
 	capture_mouse()

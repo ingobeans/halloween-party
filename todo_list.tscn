@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbsmmeaqivlcy"]
+
+[ext_resource type="Texture2D" uid="uid://btxalnm216wpa" path="res://assets/todo_list.png" id="1_ak1qb"]
+
+[node name="TodoList" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.058748424, 0, 0, 0, 0.058748424, 0, 0, 0, 0.058748424, 0, 0, 0)
+texture = ExtResource("1_ak1qb")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxl203iojfxge"]
+
+[ext_resource type="Script" uid="uid://blcaxwil6bnij" path="res://pumpkin.gd" id="1_f42hk"]
+[ext_resource type="PackedScene" uid="uid://ddvn2065omago" path="res://assets/pumpkin.blend" id="1_fy8b1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f42hk"]
+size = Vector3(1.4335938, 1, 1.3144531)
+
+[node name="Pumpkin" type="Node3D"]
+script = ExtResource("1_f42hk")
+
+[node name="pumpkin" parent="." instance=ExtResource("1_fy8b1")]
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+aabb = AABB(-0.23576753, -0.18323731, -0.18966937, 0.47153506, 0.36647463, 0.37933874)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_f42hk")

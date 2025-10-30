@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dapdvt31l0yfw"]
+
+[ext_resource type="PackedScene" uid="uid://ddvn2065omago" path="res://assets/pumpkin.blend" id="1_7hr3l"]
+[ext_resource type="Script" uid="uid://s1t87qujyype" path="res://ghost_pumpkin.gd" id="2_0hu75"]
+[ext_resource type="Material" uid="uid://ds6mfgqepkj3f" path="res://materials/ghost.tres" id="2_l7q8h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gvr31"]
+size = Vector3(1.4335938, 1.8412476, 1.3144531)
+
+[node name="GhostPumpkin" instance=ExtResource("1_7hr3l")]
+script = ExtResource("2_0hu75")
+
+[node name="Sphere" parent="." index="0"]
+material_override = ExtResource("2_l7q8h")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="1"]
+aabb = AABB(-0.23576753, -0.18323731, -0.18966937, 0.47153506, 0.36647463, 0.37933874)
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42062378, 0)
+shape = SubResource("BoxShape3D_gvr31")
