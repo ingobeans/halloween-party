@@ -4,7 +4,6 @@ extends Node3D
 @onready var visibility = $VisibleOnScreenNotifier3D
 
 var could_interact = false
-var carried = false
 var done = false
 
 func _process(_delta: float) -> void:
@@ -17,6 +16,6 @@ func _process(_delta: float) -> void:
 		ui.hide_interact()
 	could_interact = can_interact
 	if can_interact and Input.is_action_just_pressed("interact"):
-		overlapping[0].carry(self)
-		if carried:
+		if overlapping[0].carrying == null:
+			overlapping[0].carry(self)
 			done = true

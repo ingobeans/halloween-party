@@ -25,6 +25,7 @@ func _process(_delta: float) -> void:
 		var pumpkin = player.carrying
 		full = true
 		player.carrying = null
+		pumpkin.identifier = "dead"
 		pumpkin.reparent(self)
 		pumpkin.position = Vector3.ZERO
 		pumpkin.rotation = Vector3.ZERO

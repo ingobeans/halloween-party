@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2j6ocjmdqkqa"]
+
+[ext_resource type="PackedScene" uid="uid://dm1qgjlmur8kl" path="res://assets/candy_bag.blend" id="1_ep27r"]
+[ext_resource type="Script" uid="uid://b2r4vticge1hh" path="res://carriable_object.gd" id="2_f3dpj"]
+
+[node name="CandyBag" instance=ExtResource("1_ep27r")]
+script = ExtResource("2_f3dpj")
+identifier = "candy_bag"
+
+[node name="Cube" parent="." index="1"]
+collision_layer = 4

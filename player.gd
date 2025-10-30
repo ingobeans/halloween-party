@@ -25,6 +25,7 @@ var grav_vel: Vector3
 var jump_vel: Vector3 
 
 @onready var camera: Camera3D = $Camera3D
+@onready var raycast = $Camera3D/RayCast3D
 
 var carrying = null
 
@@ -35,7 +36,6 @@ func teleport(spot:Node3D):
 func carry(object:Node3D):
 	if carrying == null:
 		carrying = object
-		object.carried = true
 		object.reparent($Camera3D/Hand)
 		object.position = Vector3.ZERO
 		object.rotation = Vector3.ZERO
@@ -58,10 +58,24 @@ func lerp_towards(spot: Node3D, delta: float)->bool:
 		return true
 	return false
 	
+var looked_at_item_last = false
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("release"):
 		release_mouse()
+	if carrying == null:
+		var hit = raycast.get_collider()
+		if hit != null and hit.owner.identifier != "dead":
+			if !looked_at_item_last:
+				ui.show_interact()
+				looked_at_item_last = true
+			if Input.is_action_just_pressed("interact"):
+				carry(hit.owner)
+				ui.hide_interact()
+		else:
+			if looked_at_item_last:
+				ui.hide_interact()
+				looked_at_item_last = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

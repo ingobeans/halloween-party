@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dbsmmeaqivlcy" path="res://todo_list.tscn" id="6_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://bxl203iojfxge" path="res://pumpkin.tscn" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://dapdvt31l0yfw" path="res://ghost_pumpkin.tscn" id="8_gbfbk"]
-[ext_resource type="PackedScene" uid="uid://dm1qgjlmur8kl" path="res://assets/candy_bag.blend" id="9_ioo17"]
+[ext_resource type="PackedScene" uid="uid://c2j6ocjmdqkqa" path="res://candy_bag.tscn" id="9_ioo17"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gbfbk"]
 size = Vector3(36.111084, 9.865112, 1)
@@ -78,22 +78,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6329017, 0)
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.5597005, 1.033567, -1.1225843)
 
 [node name="lamp_post" parent="." instance=ExtResource("5_dwbse")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.929153, 0.35287434, 16.800396)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.929153, -0.021459997, 16.800396)
 
 [node name="lamp_post2" parent="." instance=ExtResource("5_dwbse")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.173904, 0.35287434, 16.800396)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.173904, -0.021459997, 16.800396)
 
 [node name="lamp_post3" parent="." instance=ExtResource("5_dwbse")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 29.173904, 0.35287434, 31.79139)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 29.173904, -0.021459997, 31.79139)
 
 [node name="lamp_post4" parent="." instance=ExtResource("5_dwbse")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -38.929153, 0.35287434, 31.791382)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -38.929153, -0.021459997, 31.791382)
 
 [node name="lamp_post5" parent="." instance=ExtResource("5_dwbse")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.22892, 0.35287434, 16.800396)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.22892, -0.021459997, 16.800396)
 
 [node name="lamp_post6" parent="." instance=ExtResource("5_dwbse")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -92.22892, 0.35287434, 31.791382)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -92.22892, -0.021459997, 31.791382)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8579197, 3.7011337, 2.3239489)
@@ -150,32 +150,26 @@ player = NodePath("../Player")
 transform = Transform3D(0.99126166, 0, -0.13191038, 0, 1, 0, 0.13191038, 0, 0.99126166, -5.742734, 0.27084154, 6.0578003)
 player = NodePath("../Player")
 
-[node name="candy_bag" parent="." instance=ExtResource("9_ioo17")]
-transform = Transform3D(0.30851895, 0, 0.9512182, 0, 1, 0, -0.9512182, 0, 0.30851895, -76.743065, 1.4421648, 14.637908)
+[node name="CandyBag" parent="." instance=ExtResource("9_ioo17")]
+transform = Transform3D(-0.15893349, 0, 0.9872893, 0, 1, 0, -0.9872893, 0, -0.15893349, -76.71487, 1.4421649, 14.458915)
 
-[node name="candy_bag2" parent="." instance=ExtResource("9_ioo17")]
-transform = Transform3D(-0.61784595, 0, 0.7862992, 0, 1, 0, -0.7862992, 0, -0.61784595, -76.743065, 1.4421648, 15.367764)
+[node name="CandyBag2" parent="." instance=ExtResource("9_ioo17")]
+transform = Transform3D(-0.03488207, 0, -0.99939144, 0, 1, 0, 0.99939144, 0, -0.03488207, -76.73511, 1.4421648, 15.268471)
 
-[node name="candy_bag3" parent="." instance=ExtResource("9_ioo17")]
-transform = Transform3D(-0.40954095, 0, 0.91229177, 0, 1, 0, -0.91229177, 0, -0.40954095, -77.18037, 1.4421648, 14.637908)
+[node name="CandyBag3" parent="." instance=ExtResource("9_ioo17")]
+transform = Transform3D(0.17418094, 0, -0.9847137, 0, 1, 0, 0.9847137, 0, 0.17418094, -77.79061, 1.4421651, 14.390499)
 
-[node name="candy_bag4" parent="." instance=ExtResource("9_ioo17")]
-transform = Transform3D(0.056152552, 0, 0.9984222, 0, 1, 0, -0.9984222, 0, 0.056152552, -77.18037, 1.4421648, 15.367764)
+[node name="CandyBag4" parent="." instance=ExtResource("9_ioo17")]
+transform = Transform3D(0.47262764, 0, 0.88126224, 0, 1, 0, -0.88126224, 0, 0.47262764, -77.53308, 1.4421648, 15.655435)
 
-[node name="candy_bag5" parent="." instance=ExtResource("9_ioo17")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -77.75425, 1.4421648, 14.637908)
+[node name="CandyBag5" parent="." instance=ExtResource("9_ioo17")]
+transform = Transform3D(0.93245, 0, -0.3612991, 0, 1, 0, 0.3612991, 0, 0.93245, -79.17657, 1.442165, 15.699429)
 
-[node name="candy_bag6" parent="." instance=ExtResource("9_ioo17")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -77.75425, 1.4421648, 15.367764)
+[node name="CandyBag6" parent="." instance=ExtResource("9_ioo17")]
+transform = Transform3D(0.04271264, 0, 0.9990874, 0, 1, 0, -0.9990874, 0, 0.04271264, -79.4826, 1.4421649, 14.635815)
 
-[node name="candy_bag7" parent="." instance=ExtResource("9_ioo17")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -78.22359, 1.4421648, 14.637908)
+[node name="CandyBag7" parent="." instance=ExtResource("9_ioo17")]
+transform = Transform3D(-0.11108733, 0, 0.99381065, 0, 1, 0, -0.99381065, 0, -0.11108733, -78.21741, 1.4421648, 15.559567)
 
-[node name="candy_bag8" parent="." instance=ExtResource("9_ioo17")]
-transform = Transform3D(-0.026072308, 0, 0.9996601, 0, 1, 0, -0.9996601, 0, -0.026072308, -78.22359, 1.4421648, 15.367764)
-
-[node name="candy_bag9" parent="." instance=ExtResource("9_ioo17")]
-transform = Transform3D(-0.57546216, 0, 0.8178284, 0, 1, 0, -0.8178284, 0, -0.57546216, -78.89789, 1.4421648, 14.637908)
-
-[node name="candy_bag10" parent="." instance=ExtResource("9_ioo17")]
-transform = Transform3D(0.10272305, 0, 0.99470997, 0, 1, 0, -0.99470997, 0, 0.10272305, -78.92525, 1.4421648, 15.367764)
+[node name="CandyBag8" parent="." instance=ExtResource("9_ioo17")]
+transform = Transform3D(-0.655242, 0, 0.755419, 0, 1, 0, -0.755419, 0, -0.655242, -78.29155, 1.4421649, 14.329604)
