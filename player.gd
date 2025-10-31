@@ -49,6 +49,7 @@ func spook_1():
 func carry(object:Node3D):
 	if carrying == null:
 		if object.identifier == "candy_bag":
+			get_node("../TodoList").check(1)
 			spook_1()
 		carrying = object
 		object.reparent($Camera3D/Hand)

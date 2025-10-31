@@ -165,7 +165,7 @@ shadow_enabled = true
 omni_range = 6.467
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.704646, 3.7011337, -0.2453723)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.704646, 3.5430374, -0.2453723)
 light_energy = 0.34
 shadow_enabled = true
 omni_range = 11.786
@@ -180,7 +180,7 @@ transform = Transform3D(-3.5372246e-08, 0, 0.8092227, 0, 0.8092227, 0, -0.809222
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047796182, 1.5789709, 5.400947)
 
 [node name="TodoList" parent="." instance=ExtResource("6_pkg7o")]
-transform = Transform3D(-1, 2.6054018e-15, -8.742278e-08, -8.742278e-08, -2.9802322e-08, 1, 0, 1, 2.9802322e-08, -4.698605, 1.1891551, 0.05926317)
+transform = Transform3D(-1, 2.6054018e-15, -8.742278e-08, -8.742278e-08, -2.9802322e-08, 1, 0, 1, 2.9802322e-08, -5.238659, 1.1891551, 0.05926317)
 
 [node name="Pumpkin1" parent="." instance=ExtResource("7_pkg7o")]
 transform = Transform3D(-0.74973005, 0, 0.6617438, 0, 1, 0, -0.6617438, 0, -0.74973005, -5.609269, 1.3769603, 0.33985063)
@@ -224,7 +224,7 @@ transform = Transform3D(-0.655242, 0, 0.755419, 0, 1, 0, -0.755419, 0, -0.655242
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.80571, 1.5557641, 10.4772415)
 
 [node name="Pentagram" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1935234, 0.32393563, 2.8036587)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1935234, 0.85699254, 2.8036587)
 visible = false
 cast_shadow = 0
 gi_lightmap_scale = 0
@@ -238,7 +238,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6504464, 0.7950887, 4.245132)
 player = NodePath("../Player")
 
-[node name="DecalCompatibility" type="MeshInstance3D" parent="."]
+[node name="Stain" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.713644, 0, 0, 0, 2.713644, 0, 0, 0, 2.713644, -74.14515, 1.0503924, 13.269127)
 cast_shadow = 0
 gi_lightmap_scale = 0
@@ -260,3 +260,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5260997, 3.8414965, -1.873
 
 [node name="lamp4" parent="." instance=ExtResource("16_2u3nc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.973897, 3.8414965, 4.092694)
+
+[node name="lamp5" parent="." instance=ExtResource("16_2u3nc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.704635, 3.8414965, -0.24566466)

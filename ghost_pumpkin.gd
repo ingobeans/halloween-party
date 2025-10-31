@@ -31,4 +31,7 @@ func _process(_delta: float) -> void:
 		pumpkin.rotation = Vector3.ZERO
 		pumpkin.scale = Vector3.ONE
 		ui.hide_interact()
+		game_state.pumpkins_placed += 1
+		if game_state.pumpkins_placed >= 2:
+			get_node("../TodoList").check(0)
 		
