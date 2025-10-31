@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://borjqwhmcjbuq"]
+[gd_scene load_steps=22 format=3 uid="uid://borjqwhmcjbuq"]
 
 [ext_resource type="PackedScene" uid="uid://2ypk55cnqk84" path="res://assets/house.blend" id="1_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://b16d8bdcr8emx" path="res://player.tscn" id="4_aqk2v"]
@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bxl203iojfxge" path="res://pumpkin.tscn" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://dapdvt31l0yfw" path="res://ghost_pumpkin.tscn" id="8_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://c2j6ocjmdqkqa" path="res://candy_bag.tscn" id="9_ioo17"]
+[ext_resource type="PackedScene" uid="uid://dd5y0aksdsy8" path="res://assets/door.blend" id="10_wse8f"]
+[ext_resource type="Shader" uid="uid://foqf6idimvb0" path="res://addons/decal_compatibility/decal.gdshader" id="11_2o6r5"]
+[ext_resource type="Texture2D" uid="uid://bqs0ve1rhwvhe" path="res://assets/pentagram.png" id="12_70uel"]
+[ext_resource type="Script" uid="uid://feckn7f3pmud" path="res://addons/decal_compatibility/decal_compatibility.gd" id="13_hiqwa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gbfbk"]
 size = Vector3(36.111084, 9.865112, 1)
@@ -40,6 +44,23 @@ fog_enabled = true
 fog_light_color = Color(0.009289893, 0.01126191, 0.01477998, 1)
 fog_density = 0.096
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2u3nc"]
+render_priority = 0
+shader = ExtResource("11_2o6r5")
+shader_parameter/albedo = ExtResource("12_70uel")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.5, 0.5, 0.5)
+shader_parameter/cube_half_size = Vector3(1, 1, 1)
+shader_parameter/enable_y_fade = true
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_udxuc"]
+material = SubResource("ShaderMaterial_2u3nc")
+size = Vector3(2, 2, 2)
+
 [node name="World" type="Node3D"]
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
@@ -61,6 +82,10 @@ shape = SubResource("BoxShape3D_ioo17")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.484276, 4.432556, 22.00531)
+shape = SubResource("BoxShape3D_wse8f")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="InvisibleWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.609535, 4.432556, 22.00531)
 shape = SubResource("BoxShape3D_wse8f")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -124,23 +149,23 @@ light_energy = 0.34
 shadow_enabled = true
 omni_range = 11.786
 
-[node name="Door" parent="." instance=ExtResource("6_dwbse")]
+[node name="Door1" parent="." instance=ExtResource("6_dwbse")]
 transform = Transform3D(-3.5372246e-08, 0, 0.8092227, 0, 0.8092227, 0, -0.8092227, 0, -3.5372246e-08, -8.614647, 1.3051668, -2.9494734)
 
-[node name="Door3" parent="." instance=ExtResource("6_dwbse")]
+[node name="Door2" parent="." instance=ExtResource("6_dwbse")]
 transform = Transform3D(-3.5372246e-08, 0, 0.8092227, 0, 0.8092227, 0, -0.8092227, 0, -3.5372246e-08, -8.584333, 1.3051668, 3.257004)
 
-[node name="Door2" parent="." instance=ExtResource("6_dwbse")]
+[node name="Door3" parent="." instance=ExtResource("6_dwbse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047796182, 1.5789709, 5.400947)
 
 [node name="TodoList" parent="." instance=ExtResource("6_pkg7o")]
 transform = Transform3D(-1, 2.6054018e-15, -8.742278e-08, -8.742278e-08, -2.9802322e-08, 1, 0, 1, 2.9802322e-08, -4.698605, 1.1891551, 0.05926317)
 
 [node name="Pumpkin" parent="." instance=ExtResource("7_pkg7o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.609269, 1.3769603, 0.22065294)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.609269, 1.3769603, 0.33985063)
 
 [node name="Pumpkin2" parent="." instance=ExtResource("7_pkg7o")]
-transform = Transform3D(0.8944354, 0, 0.4471972, 0, 1, 0, -0.4471972, 0, 0.8944354, -6.1761346, 1.3769603, 0.05165136)
+transform = Transform3D(0.8944354, 0, 0.4471972, 0, 1, 0, -0.4471972, 0, 0.8944354, -6.1761346, 1.3769603, 0.17084906)
 
 [node name="GhostPumpkin" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_gbfbk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.798513, 0.27084154, 6.0578003)
@@ -173,3 +198,17 @@ transform = Transform3D(-0.11108733, 0, 0.99381065, 0, 1, 0, -0.99381065, 0, -0.
 
 [node name="CandyBag8" parent="." instance=ExtResource("9_ioo17")]
 transform = Transform3D(-0.655242, 0, 0.755419, 0, 1, 0, -0.755419, 0, -0.655242, -78.29155, 1.4421649, 14.329604)
+
+[node name="door" parent="." instance=ExtResource("10_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.80571, 1.5557641, 10.4772415)
+
+[node name="Pentagram" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1935234, 0.32393563, 2.8036587)
+visible = false
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_udxuc")
+Skeleton = null
+script = ExtResource("13_hiqwa")
+texture = ExtResource("12_70uel")
+metadata/_custom_type_script = "uid://feckn7f3pmud"

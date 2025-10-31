@@ -11,7 +11,7 @@ var carried = false
 var full = false
 
 func _process(_delta: float) -> void:
-	model.visible = player.carrying != null and not full
+	model.visible = player.carrying != null and not full and player.carrying.identifier == "pumpkin"
 	if !model.visible:
 		return
 	var overlapping = area.get_overlapping_bodies() 
@@ -29,5 +29,6 @@ func _process(_delta: float) -> void:
 		pumpkin.reparent(self)
 		pumpkin.position = Vector3.ZERO
 		pumpkin.rotation = Vector3.ZERO
+		pumpkin.scale = Vector3.ONE
 		ui.hide_interact()
 		

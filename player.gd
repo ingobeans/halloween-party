@@ -33,11 +33,22 @@ func teleport(spot:Node3D):
 	global_position = spot.global_position
 	camera.global_rotation = spot.global_rotation
 
+func spook_1():
+	for door_name in ["Door1","Door2","Door3"]:
+		var door = get_node("../"+door_name)
+		if not door.open:
+			door.open = true
+			door.animation.play("open")
+	get_node("../Pentagram").visible = true
+
 func carry(object:Node3D):
 	if carrying == null:
+		if object.identifier == "candy_bag":
+			spook_1()
 		carrying = object
 		object.reparent($Camera3D/Hand)
 		object.position = Vector3.ZERO
+		object.scale = Vector3.ONE
 		object.rotation = Vector3.ZERO
 
 func _ready() -> void:
