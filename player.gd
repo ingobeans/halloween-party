@@ -33,12 +33,17 @@ func teleport(spot:Node3D):
 	global_position = spot.global_position
 	camera.global_rotation = spot.global_rotation
 
+@export var pumpkins: Array[Node3D]
+
 func spook_1():
 	for door_name in ["Door1","Door2","Door3"]:
 		var door = get_node("../"+door_name)
 		if not door.open:
 			door.open = true
 			door.animation.play("open")
+	for pumpkin in pumpkins:
+		pumpkin.get_node("Sphere_001").visible = true
+		pumpkin.get_node("Sphere").visible = false
 	get_node("../Pentagram").visible = true
 
 func carry(object:Node3D):

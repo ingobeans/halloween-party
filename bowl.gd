@@ -26,5 +26,10 @@ func _process(_delta: float) -> void:
 		full = true
 		player.carrying = null
 		candy_bag.queue_free()
+		for index in range(8):
+			var name = "CandyBag"+str(index+1)
+			var node = get_node("../"+name)
+			if node != null:
+				node.queue_free()
 		$Candy.visible = true
 		

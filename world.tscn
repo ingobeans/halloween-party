@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://borjqwhmcjbuq"]
+[gd_scene load_steps=26 format=3 uid="uid://borjqwhmcjbuq"]
 
 [ext_resource type="PackedScene" uid="uid://2ypk55cnqk84" path="res://assets/house.blend" id="1_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://b16d8bdcr8emx" path="res://player.tscn" id="4_aqk2v"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bqs0ve1rhwvhe" path="res://assets/pentagram.png" id="12_70uel"]
 [ext_resource type="Script" uid="uid://feckn7f3pmud" path="res://addons/decal_compatibility/decal_compatibility.gd" id="13_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://dp6qtqh4qm2ur" path="res://bowl.tscn" id="14_70uel"]
+[ext_resource type="Texture2D" uid="uid://ba7xvv10anl0b" path="res://assets/puddle.png" id="15_hiqwa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gbfbk"]
 size = Vector3(36.111084, 9.865112, 1)
@@ -62,6 +63,23 @@ shader_parameter/fade_power = 1.0
 material = SubResource("ShaderMaterial_2u3nc")
 size = Vector3(2, 2, 2)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_udxuc"]
+render_priority = 0
+shader = ExtResource("11_2o6r5")
+shader_parameter/albedo = ExtResource("15_hiqwa")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 0.3
+shader_parameter/scale_mod = Vector3(0.5, 0.5, 0.5)
+shader_parameter/cube_half_size = Vector3(1, 1, 1)
+shader_parameter/enable_y_fade = true
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ikiii"]
+material = SubResource("ShaderMaterial_udxuc")
+size = Vector3(2, 2, 2)
+
 [node name="World" type="Node3D"]
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
@@ -100,8 +118,9 @@ environment = SubResource("Environment_aqk2v")
 [node name="house" parent="." instance=ExtResource("1_fj7yv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6329017, 0)
 
-[node name="Player" parent="." instance=ExtResource("4_aqk2v")]
+[node name="Player" parent="." node_paths=PackedStringArray("pumpkins") instance=ExtResource("4_aqk2v")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.5597005, 1.033567, -1.1225843)
+pumpkins = [NodePath("../Pumpkin1"), NodePath("../Pumpkin2")]
 
 [node name="lamp_post" parent="." instance=ExtResource("5_dwbse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.929153, -0.021459997, 16.800396)
@@ -162,8 +181,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047796182, 1.5789709, 5.40
 [node name="TodoList" parent="." instance=ExtResource("6_pkg7o")]
 transform = Transform3D(-1, 2.6054018e-15, -8.742278e-08, -8.742278e-08, -2.9802322e-08, 1, 0, 1, 2.9802322e-08, -4.698605, 1.1891551, 0.05926317)
 
-[node name="Pumpkin" parent="." instance=ExtResource("7_pkg7o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.609269, 1.3769603, 0.33985063)
+[node name="Pumpkin1" parent="." instance=ExtResource("7_pkg7o")]
+transform = Transform3D(-0.74973005, 0, 0.6617438, 0, 1, 0, -0.6617438, 0, -0.74973005, -5.609269, 1.3769603, 0.33985063)
 
 [node name="Pumpkin2" parent="." instance=ExtResource("7_pkg7o")]
 transform = Transform3D(0.8944354, 0, 0.4471972, 0, 1, 0, -0.4471972, 0, 0.8944354, -6.1761346, 1.3769603, 0.17084906)
@@ -176,7 +195,7 @@ player = NodePath("../Player")
 transform = Transform3D(0.99126166, 0, -0.13191038, 0, 1, 0, 0.13191038, 0, 0.99126166, -5.742734, 0.27084154, 6.0578003)
 player = NodePath("../Player")
 
-[node name="CandyBag" parent="." instance=ExtResource("9_ioo17")]
+[node name="CandyBag1" parent="." instance=ExtResource("9_ioo17")]
 transform = Transform3D(-0.15893349, 0, 0.9872893, 0, 1, 0, -0.9872893, 0, -0.15893349, -76.71487, 1.4421649, 14.458915)
 
 [node name="CandyBag2" parent="." instance=ExtResource("9_ioo17")]
@@ -217,3 +236,14 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 [node name="Bowl" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_70uel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6504464, 0.7950887, 4.245132)
 player = NodePath("../Player")
+
+[node name="DecalCompatibility" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.713644, 0, 0, 0, 2.713644, 0, 0, 0, 2.713644, -74.14515, 1.0503924, 13.269127)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_ikiii")
+Skeleton = null
+script = ExtResource("13_hiqwa")
+texture = ExtResource("15_hiqwa")
+albedo_mix = 0.3
+metadata/_custom_type_script = "uid://feckn7f3pmud"
