@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://borjqwhmcjbuq"]
+[gd_scene load_steps=27 format=3 uid="uid://borjqwhmcjbuq"]
 
 [ext_resource type="PackedScene" uid="uid://2ypk55cnqk84" path="res://assets/house.blend" id="1_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://b16d8bdcr8emx" path="res://player.tscn" id="4_aqk2v"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://feckn7f3pmud" path="res://addons/decal_compatibility/decal_compatibility.gd" id="13_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://dp6qtqh4qm2ur" path="res://bowl.tscn" id="14_70uel"]
 [ext_resource type="Texture2D" uid="uid://ba7xvv10anl0b" path="res://assets/puddle.png" id="15_hiqwa"]
+[ext_resource type="PackedScene" uid="uid://cxnqtjg2mvfbg" path="res://assets/lamp.blend" id="16_2u3nc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gbfbk"]
 size = Vector3(36.111084, 9.865112, 1)
@@ -141,24 +142,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.22892, -0.021459997, 16.8
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -92.22892, -0.021459997, 31.791382)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8579197, 3.7011337, 2.3239489)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8579197, 3.353846, 2.3239489)
 light_energy = 0.34
 shadow_enabled = true
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.564572, 3.5647123, 3.4393635)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.946786, 3.5180242, 4.1063495)
 light_energy = 0.34
 shadow_enabled = true
 omni_range = 8.364
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5994966, 3.7011337, -1.7988229)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5379703, 3.4566793, -1.8491434)
 light_energy = 0.34
 shadow_enabled = true
 omni_range = 11.786
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="OmniLight3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.012629, -0.11783695, 5.45407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.003986, 0.036770582, 5.4921455)
 light_energy = 0.17
 shadow_enabled = true
 omni_range = 6.467
@@ -247,3 +248,15 @@ script = ExtResource("13_hiqwa")
 texture = ExtResource("15_hiqwa")
 albedo_mix = 0.3
 metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="lamp" parent="." instance=ExtResource("16_2u3nc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.850334, 3.8414965, 2.3340135)
+
+[node name="lamp2" parent="." instance=ExtResource("16_2u3nc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5020838, 3.8414965, 3.6889021)
+
+[node name="lamp3" parent="." instance=ExtResource("16_2u3nc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5260997, 3.8414965, -1.8738594)
+
+[node name="lamp4" parent="." instance=ExtResource("16_2u3nc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.973897, 3.8414965, 4.092694)
