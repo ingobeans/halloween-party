@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=4 uid="uid://dp6qtqh4qm2ur"]
+
+[ext_resource type="PackedScene" uid="uid://bxkqnm6mgd6l3" path="res://assets/bowl.blend" id="1_l4bwr"]
+[ext_resource type="Script" uid="uid://b2yfrlgvvkhr3" path="res://bowl.gd" id="2_6yfex"]
+[ext_resource type="Material" uid="uid://ds6mfgqepkj3f" path="res://materials/ghost.tres" id="2_evrla"]
+[ext_resource type="Texture2D" uid="uid://buwc1cxl160bk" path="res://assets/candy_bowl_candy.png" id="3_6yfex"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fqy2"]
+resource_name = "Candy"
+cull_mode = 2
+albedo_texture = ExtResource("3_6yfex")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_imrps"]
+_surfaces = [{
+"aabb": AABB(-1.2379701, 0.5287677, -1.2538748, 2.4658995, 0.5595398, 2.4616928),
+"format": 34896613377,
+"index_count": 96,
+"index_data": PackedByteArray("FAABAAIAFAADAAEABQAUAAIABQACAAYAAAADABQAAAAEAAMAFQAUAAUAFQAAABQAFgAFAAYAFgAGABIAEQAWABIAEQASABMAEAAWABEAFwAFABYAEAAXABYAFwAVAAUADwAXABAADwAYABcAGAAVABcADgAYAA8ADgANABgAGAAMABUADQAMABgADAAAABUADQALAAwADAAHAAAACwAHAAwABwAEAAAACwAJAAcABwAIAAQACQAIAAcACQAKAAgA"),
+"lods": [0.3324267, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMABQAAAAIABQACAAYABwAEAAAABwAIAAQACQAIAAcACQAKAAgACwAJAAcADAAHAAAACwAHAAwADAAAAAUADQALAAwADQAMAA4ADwAOAAwADwAMABAAEAAMABEADAAFABEAEQAFAAYAEQAGABIAEQASABMA")],
+"name": "Candy",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 25,
+"vertex_data": PackedByteArray("hICajmVOAACX3qGWpScAAPL222rKTwAAu7PbaowOAADSf11zAAAAAG20mo5kggAA//9dc/+AAACcTC+FZU4AAJxMUqFWEQAA3RLbaoRJAABoKZ1S2yQAAAAAXXP/gAAAnEz//2SCAACRDdtqXL0AADQtxy1k4wAAC0fbajz2AADSf11z//8AAB+122pT+AAAS+/bapK6AADX2gAARtkAAG20L4VlTgAAz39CxWeCAABttC+FY7YAAASBj7tjtgAAnEwvhWO2AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cuuh2"]
+resource_name = "bowl_Plane"
+_surfaces = [{
+"aabb": AABB(-1.2379701, 0.5287677, -1.2538748, 2.4658995, 0.5595398, 2.4616928),
+"attribute_data": PackedByteArray("GsBhpkDv1JJ2+xWnxdkqhsG/034WpmGmFqaShySJ66NwlGyRr3/qvxamYaYWpp7AFqaewBamYaYe2p7A///qv3faIPyf9/fcn/f33F/tdewWpp7Awb///0ujEvtYlpDxfYZf3q9/6r8e2mGmdvsVp8XZKobBv9N+GsBhpham2tq/v5/AWsDa2h7a2tr//+q/HtqewFrA2toe2p7AHtra2r+/n8Ae2traWsDa2nfaIPwe2traFqaewBam2toWptraS6MS+32GX95awNrawb///xam2tokieujFqaShxamYaYawGGmv7+fwB7aYaa/v5/AHtphph7ansAawGGmHtphpg=="),
+"format": 34896613399,
+"index_count": 96,
+"index_data": PackedByteArray("GgABABsAGgAcAAEABQAdAB4ABQAGAB0AHwAgACEAHwAUACAAIgAjABEAIgAkACMAJQAmACcAJQAoACYAFQApABAAFQAqACkAKwASABMAKwAsABIAGAAtAC4AGAAZAC0AFwAvADAAFwAxAC8AFgAyADMAFgA0ADIANQA2ADcANQAIADYACQAKAAsACQAHAAoADAA4ADkADAANADgAAAADADoAAAAEAAMAOwA8AD0AOwA+ADwADgACAA8ADgA/AAIA"),
+"lods": [0.3324267, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMABQAEAAAABQAGAAQABwAGAAUABwAIAAYACQAHAAoACQAKAAsADAANAAAADAAAAA4ADgAAAAIADgACAA8AEAAOAA8AEAAPABEAEAASABMAFAAOABAAFQAUABAAFgAUABUAFgAXABQAGAAUABcAGAAZABQA")],
+"material": SubResource("StandardMaterial3D_5fqy2"),
+"name": "Candy",
+"primitive": 3,
+"uv_scale": Vector4(1.9951558, 1.9784489, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray("hICajmVOhMOX3qGWpSf+vfL222rKTwPCu7PbaowOhMPSf11zAACEw5xML4VlTgTAnExSoVYRBMDdEttqhEnizGgpnVLbJLHCAABdc/+Av8ycTC+FZU4nzZxM//9kgu7MnEz//2SC/M6cTC+FZU4Mz220mo5kggPC//9dc/+AA8IftdtqU/jPuUvv22qSugW+S+/bapK6sbLX2gAARtmps5xM//9kgpm00n9dc///xrkLR9tqPPYAujQtxy1k49K2kQ3baly9drUAAF1z/4C+tW20L4VlTv+98vbbaspP/b27s9tqjA4AvtJ/XXMAAATAhICajmVOBMCcTC+FY7aEtM9/QsVngoS0BIGPu2O2j7RttC+FY7YFvv//XXP/gAS+bbSajmSCBb4EgY+7Y7YGv220mo5kgga/bbQvhWO2Br/Pf0LFZ4IGv220L4Vjtt65BIGPu2O207kftdtqU/jWtG20L4VjtryznEz//2SCYLWcTC+FY7YXtZxML4VjtrS2C0fbajz2OLeRDdtqXL1wtgSBj7tjtgO60n9dc///+LmcTC+FY7YOut0S22qESbzCnExSoVYRpsKcTC+FZU6xwoSAmo5lTibPz39CxWeCCs9ttC+FZU6Ew89/QsVngrfFbbQvhWVOx8VttJqOZIK+xYSAmo5lTr7FbbQvhWVOAsIA+uJ8CP0HhiX29HoA+t58APrUfHb2Ont29jt7SvK4l7fy55lL8DWYffXwlujykpdj9Jp2TvW1eSX283ol9vd6Xu7Ad0T1xHrl1nBo2tWBbT72ioNy7i538/c9kQ/04px081Kdb/W+nRH9B4al/AGGcv0Lhnb2PXt29jt7kP57f33+tX9i+8F2RPXMekT1wHpE9cZ6TOfic0zn4nNM5+NzTOfgcz/uqHhU7gR46tQUcsnV123M8i6dNvCgnCbzt5zJ9mSdx/BHnCb4Q5Fq9yqRyPhZkSvz4JlJ8u6Zu/LnmTj2y3w59W15AvrtfDnxb3dn8eh4UPEneFDxJXgl9vF6")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_imrps")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6yfex"]
+size = Vector3(1.8378906, 2.0195313, 1.8662109)
+
+[node name="Bowl" instance=ExtResource("1_l4bwr")]
+script = ExtResource("2_6yfex")
+
+[node name="Candy" parent="." index="1"]
+visible = false
+
+[node name="CandyGhost" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(0.1897356, 0, 0, 0, 0.1897356, 0, 0, 0, 0.1897356, 0, 0, 0)
+visible = false
+material_override = ExtResource("2_evrla")
+mesh = SubResource("ArrayMesh_cuuh2")
+skeleton = NodePath("")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15097201, 0)
+aabb = AABB(-0.044695783, -0.02210835, -0.060476236, 0.08939157, 0.0442167, 0.12095247)
+
+[node name="Area3D" type="Area3D" parent="." index="4"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5097656, 0)
+shape = SubResource("BoxShape3D_6yfex")

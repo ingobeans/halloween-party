@@ -17,6 +17,7 @@ shape = SubResource("CapsuleShape3D_sh265")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6937206, 0)
+fov = 75.6
 
 [node name="Hand" type="Node3D" parent="Camera3D"]
 transform = Transform3D(0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, 0.209, -0.314, -0.446)

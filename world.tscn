@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://borjqwhmcjbuq"]
+[gd_scene load_steps=23 format=3 uid="uid://borjqwhmcjbuq"]
 
 [ext_resource type="PackedScene" uid="uid://2ypk55cnqk84" path="res://assets/house.blend" id="1_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://b16d8bdcr8emx" path="res://player.tscn" id="4_aqk2v"]
@@ -13,6 +13,7 @@
 [ext_resource type="Shader" uid="uid://foqf6idimvb0" path="res://addons/decal_compatibility/decal.gdshader" id="11_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://bqs0ve1rhwvhe" path="res://assets/pentagram.png" id="12_70uel"]
 [ext_resource type="Script" uid="uid://feckn7f3pmud" path="res://addons/decal_compatibility/decal_compatibility.gd" id="13_hiqwa"]
+[ext_resource type="PackedScene" uid="uid://dp6qtqh4qm2ur" path="res://bowl.tscn" id="14_70uel"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gbfbk"]
 size = Vector3(36.111084, 9.865112, 1)
@@ -212,3 +213,7 @@ Skeleton = null
 script = ExtResource("13_hiqwa")
 texture = ExtResource("12_70uel")
 metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="Bowl" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_70uel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6504464, 0.7950887, 4.245132)
+player = NodePath("../Player")
