@@ -259,9 +259,6 @@ transform = Transform3D(1.985, 0, 0, 0, -8.676711e-08, 1.985, 0, -1.985, -8.6767
 visible = false
 texture = ExtResource("12_70uel")
 
-[node name="CandyBag" parent="." instance=ExtResource("9_ioo17")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8717828, 0.4886762, 3.9915862)
-
 [node name="SwirlyParticles" parent="." instance=ExtResource("18_ikiii")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3316255, 0.12669516, 3.7075124)
 
