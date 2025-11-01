@@ -48,6 +48,21 @@ func spook_1():
 		pumpkin.get_node("Sphere").visible = false
 	get_node("../Pentagram").visible = true
 
+var spook_2_timer = 0.0
+func start_spook2():
+	var door3 = get_node("../Door3")
+	if door3.open:
+		door3.locked = true
+		door3.open = false
+		door3.animation.play("close")
+	get_node("../SwirlyParticles").emitting = true
+	get_node("../SwirlierParticles").emitting = true
+	for index in range(5):
+		var name = "OmniLight3D"+str(index+1)
+		var node = get_node("../"+name)
+		node.visible = false
+	spook_2_timer += 0.000001
+
 func spook_2():
 	skeleton.visible = true
 	var animation: AnimationPlayer = skeleton.get_node("AnimationPlayer")
@@ -61,6 +76,7 @@ func make_skeleton_stand(_wa):
 	animation.play("mixamo_com")
 func make_skeleton_run(_wa):
 	skeleton.get_node("AnimationSprint").play("mixamo_com")
+	skeleton.chasing = true
 
 func carry(object:Node3D):
 	if carrying == null:
@@ -93,7 +109,12 @@ func lerp_towards(spot: Node3D, delta: float)->bool:
 	
 var looked_at_item_last = false
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	if spook_2_timer > 0.0:
+		spook_2_timer += delta
+		if spook_2_timer >= 2.0:
+			spook_2()
+			spook_2_timer = 0.0
 	if Input.is_action_just_pressed("release"):
 		release_mouse()
 	if carrying == null:

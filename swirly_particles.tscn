@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvr25w2b844d0"]
+
+[sub_resource type="Gradient" id="Gradient_chr4w"]
+offsets = PackedFloat32Array(0.14545454, 0.72727275)
+colors = PackedColorArray(0.7669051, 0, 0.015778415, 1, 0.7457669, 0, 0.04893799, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kttgr"]
+gradient = SubResource("Gradient_chr4w")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5k7u"]
+transparency = 1
+albedo_texture = SubResource("GradientTexture2D_kttgr")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_lhssi"]
+material = SubResource("StandardMaterial3D_h5k7u")
+size = Vector2(0.2, 0.2)
+
+[node name="SwirlyParticles" type="CPUParticles3D"]
+emitting = false
+amount = 50
+lifetime = 1.42
+mesh = SubResource("QuadMesh_lhssi")
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 1.29, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 0.1
+tangential_accel_min = 2.0
+tangential_accel_max = 2.0
