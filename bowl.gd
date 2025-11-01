@@ -33,4 +33,5 @@ func _process(_delta: float) -> void:
 				node.queue_free()
 		$Candy.visible = true
 		get_node("../TodoList").check(2)
+		player.spook_2()
 		

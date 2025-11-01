@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://nh6sg4kagkcv"]
+
+[ext_resource type="Texture2D" uid="uid://cxlttgllos2ko" path="res://assets/skeleton.png" id="1_74eju"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+depth_draw_mode = 1
+albedo_texture = ExtResource("1_74eju")

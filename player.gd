@@ -8,6 +8,8 @@ extends CharacterBody3D
 @export_range(0.1, 3.0, 0.1) var jump_height: float = 1 
 @export_range(0.1, 3.0, 0.1, "or_greater") var camera_sens: float = 1
 
+@export var skeleton: Node3D
+
 var jumping: bool = false
 var mouse_captured: bool = false
 
@@ -45,6 +47,20 @@ func spook_1():
 		pumpkin.get_node("Sphere_001").visible = true
 		pumpkin.get_node("Sphere").visible = false
 	get_node("../Pentagram").visible = true
+
+func spook_2():
+	skeleton.visible = true
+	var animation: AnimationPlayer = skeleton.get_node("AnimationPlayer")
+	animation.animation_finished.connect(make_skeleton_stand)
+	animation.play("mixamo_com")
+
+func make_skeleton_stand(_wa):
+	skeleton.position.y += skeleton.get_node("LocalGround").position.y
+	var animation: AnimationPlayer = skeleton.get_node("AnimationCrouchToStand")
+	animation.animation_finished.connect(make_skeleton_run)
+	animation.play("mixamo_com")
+func make_skeleton_run(_wa):
+	skeleton.get_node("AnimationSprint").play("mixamo_com")
 
 func carry(object:Node3D):
 	if carrying == null:

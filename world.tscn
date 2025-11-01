@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://borjqwhmcjbuq"]
+[gd_scene load_steps=26 format=3 uid="uid://borjqwhmcjbuq"]
 
 [ext_resource type="PackedScene" uid="uid://2ypk55cnqk84" path="res://assets/house.blend" id="1_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://b16d8bdcr8emx" path="res://player.tscn" id="4_aqk2v"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dp6qtqh4qm2ur" path="res://bowl.tscn" id="14_70uel"]
 [ext_resource type="Texture2D" uid="uid://ba7xvv10anl0b" path="res://assets/puddle.png" id="15_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://cxnqtjg2mvfbg" path="res://assets/lamp.blend" id="16_2u3nc"]
+[ext_resource type="PackedScene" uid="uid://dsechwch0yssy" path="res://skeleton.tscn" id="16_udxuc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gbfbk"]
 size = Vector3(36.111084, 9.865112, 1)
@@ -46,23 +47,6 @@ tonemap_mode = 2
 fog_enabled = true
 fog_light_color = Color(0.009289893, 0.01126191, 0.01477998, 1)
 fog_density = 0.096
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2u3nc"]
-render_priority = 0
-shader = ExtResource("11_2o6r5")
-shader_parameter/albedo = ExtResource("12_70uel")
-shader_parameter/modulate = Color(1, 1, 1, 1)
-shader_parameter/albedo_mix = 1.0
-shader_parameter/scale_mod = Vector3(0.5, 0.5, 0.5)
-shader_parameter/cube_half_size = Vector3(1, 1, 1)
-shader_parameter/enable_y_fade = true
-shader_parameter/fade_start = 0.3
-shader_parameter/fade_end = 0.7
-shader_parameter/fade_power = 1.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_udxuc"]
-material = SubResource("ShaderMaterial_2u3nc")
-size = Vector3(2, 2, 2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_udxuc"]
 render_priority = 0
@@ -119,8 +103,9 @@ environment = SubResource("Environment_aqk2v")
 [node name="house" parent="." instance=ExtResource("1_fj7yv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6329017, 0)
 
-[node name="Player" parent="." node_paths=PackedStringArray("pumpkins") instance=ExtResource("4_aqk2v")]
+[node name="Player" parent="." node_paths=PackedStringArray("skeleton", "pumpkins") instance=ExtResource("4_aqk2v")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.5597005, 1.033567, -1.1225843)
+skeleton = NodePath("../Skeleton")
 pumpkins = [NodePath("../Pumpkin1"), NodePath("../Pumpkin2")]
 
 [node name="lamp_post" parent="." instance=ExtResource("5_dwbse")]
@@ -223,17 +208,6 @@ transform = Transform3D(-0.655242, 0, 0.755419, 0, 1, 0, -0.755419, 0, -0.655242
 [node name="door" parent="." instance=ExtResource("10_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.80571, 1.5557641, 10.4772415)
 
-[node name="Pentagram" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1935234, 0.85699254, 2.8036587)
-visible = false
-cast_shadow = 0
-gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_udxuc")
-Skeleton = null
-script = ExtResource("13_hiqwa")
-texture = ExtResource("12_70uel")
-metadata/_custom_type_script = "uid://feckn7f3pmud"
-
 [node name="Bowl" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_70uel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6504464, 0.7950887, 4.245132)
 player = NodePath("../Player")
@@ -263,3 +237,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.973897, 3.8414965, 4.0926
 
 [node name="lamp5" parent="." instance=ExtResource("16_2u3nc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.704635, 3.8414965, -0.24566466)
+
+[node name="Skeleton" parent="." instance=ExtResource("16_udxuc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.3918692, -2.6328204, 3.6619263)
+
+[node name="Pentagram" type="Sprite3D" parent="."]
+transform = Transform3D(1.985, 0, 0, 0, -8.676711e-08, 1.985, 0, -1.985, -8.676711e-08, -1.2749232, 0.12761116, 3.640035)
+visible = false
+texture = ExtResource("12_70uel")
+
+[node name="CandyBag" parent="." instance=ExtResource("9_ioo17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8884382, 0.4886762, 4.830018)
