@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfviexavow3uk"]
 
+[ext_resource type="FontFile" uid="uid://nub143mt6kxn" path="res://times.ttf" id="1_abjgy"]
 [ext_resource type="Texture2D" uid="uid://by4fjbjcksx25" path="res://assets/end_screen_man.png" id="1_my301"]
-
-[sub_resource type="SystemFont" id="SystemFont_3iaq5"]
-font_names = PackedStringArray("Noto Serif")
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -24,9 +22,10 @@ offset_top = 9.0
 offset_right = 891.0
 offset_bottom = 189.0
 theme_override_colors/font_color = Color(0.598121, 0, 0.040446293, 1)
-theme_override_fonts/font = SubResource("SystemFont_3iaq5")
+theme_override_fonts/font = ExtResource("1_abjgy")
 theme_override_font_sizes/font_size = 131
 text = "YOU DIED"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
@@ -35,9 +34,10 @@ offset_top = 203.0
 offset_right = 918.0
 offset_bottom = 287.0
 theme_override_colors/font_color = Color(0.598121, 0, 0.040446293, 1)
-theme_override_fonts/font = SubResource("SystemFont_3iaq5")
+theme_override_fonts/font = ExtResource("1_abjgy")
 theme_override_font_sizes/font_size = 61
 text = "game end. well played"
+horizontal_alignment = 1
 
 [node name="EndScreenMan" type="Sprite2D" parent="."]
 position = Vector2(160, 354)

@@ -19,7 +19,6 @@ material = SubResource("StandardMaterial3D_h5k7u")
 size = Vector2(0.2, 0.2)
 
 [node name="SwirlyParticles" type="CPUParticles3D"]
-emitting = false
 amount = 50
 lifetime = 1.42
 mesh = SubResource("QuadMesh_lhssi")

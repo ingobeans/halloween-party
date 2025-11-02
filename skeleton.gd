@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 var speed = 2.5
+var acceleration = 1.0
 
 @export var player: Node3D
 
@@ -8,9 +9,10 @@ var speed = 2.5
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 var chasing = false
 
-func _physics_process(_delta: float) -> void:	
+func _physics_process(delta: float) -> void:	
 	if not chasing:
 		return
+	speed += acceleration * delta
 	nav.target_position = player.global_position
 	var next_position = nav.get_next_path_position()
 	var direction = global_position.direction_to(next_position)

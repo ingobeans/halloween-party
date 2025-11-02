@@ -48,6 +48,12 @@ func spook_1():
 		pumpkin.get_node("Sphere").visible = false
 	get_node("../Pentagram").visible = true
 
+func set_lights(on:bool):
+	for index in range(5):
+		var namegood = "OmniLight3D"+str(index+1)
+		var node = get_node("../"+namegood)
+		node.visible = on
+
 var spook_2_timer = 0.0
 func start_spook2():
 	var door3 = get_node("../Door3")
@@ -57,11 +63,11 @@ func start_spook2():
 		door3.animation.play("close")
 	get_node("../SwirlyParticles").emitting = true
 	get_node("../SwirlierParticles").emitting = true
-	for index in range(5):
-		var name = "OmniLight3D"+str(index+1)
-		var node = get_node("../"+name)
-		node.visible = false
+	get_node("../SwirlyParticles").visible = true
+	get_node("../SwirlierParticles").visible = true
+	set_lights(false)
 	spook_2_timer += 0.000001
+	get_node("../Crescendo").playing = true
 
 func spook_2():
 	skeleton.visible = true
@@ -90,7 +96,8 @@ func carry(object:Node3D):
 		object.rotation = Vector3.ZERO
 
 func _ready() -> void:
-	capture_mouse()
+	#capture_mouse()
+	pass
 
 func lerp_towards(spot: Node3D, delta: float)->bool:
 	global_position = global_position.move_toward(spot.global_position, 0.25 * delta)
@@ -109,7 +116,30 @@ func lerp_towards(spot: Node3D, delta: float)->bool:
 	
 var looked_at_item_last = false
 
+var started_now = true
+var frame_count = 0
 func _process(delta: float) -> void:
+	frame_count += 1
+	if !game_state.started:
+		if frame_count == 1:
+			var animation: AnimationPlayer = skeleton.get_node("AnimationPlayer")
+			animation.play("mixamo_com")
+		rotation.y += 4.0 * PI / 60.0
+		set_lights(frame_count % 2 == 0)
+		return
+	if started_now and game_state.started:
+		var animation: AnimationPlayer = skeleton.get_node("AnimationPlayer")
+		animation.stop(false)
+		started_now = false
+		global_rotation.y = -PI
+		get_node("../SwirlyParticles").emitting = false
+		get_node("../SwirlierParticles").emitting = false
+		get_node("../SwirlyParticles").visible = false
+		get_node("../SwirlierParticles").visible = false
+		get_node("../Pentagram").visible = false
+		set_lights(true)
+		for pumpkin in pumpkins:
+			pumpkin.reparent(get_parent())
 	if spook_2_timer > 0.0:
 		spook_2_timer += delta
 		if spook_2_timer >= 2.0:
@@ -132,6 +162,8 @@ func _process(delta: float) -> void:
 				looked_at_item_last = false
 
 func _unhandled_input(event: InputEvent) -> void:
+	if !game_state.started:
+		return
 	if event is InputEventMouseMotion:
 		look_dir = event.relative * 0.001
 		if mouse_captured: _rotate_camera()
