@@ -1524,7 +1524,6 @@ shape = SubResource("CapsuleShape3D_d56fl")
 disabled = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-avoidance_enabled = true
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 2

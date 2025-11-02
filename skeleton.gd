@@ -19,8 +19,8 @@ func _physics_process(delta: float) -> void:
 
 	if direction:
 		velocity.x = direction.x * speed
+		velocity.y = direction.y * speed / 2.0
 		velocity.z = direction.z * speed
-		mesh.rotation.y = atan2(player.global_position.x-global_position.x,player.global_position.z - global_position.z) + PI / 2.0
 		mesh.rotation.y = atan2(direction.x,direction.z) + PI / 2.0
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)

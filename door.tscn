@@ -3,21 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dd5y0aksdsy8" path="res://assets/door.blend" id="1_ba8gm"]
 [ext_resource type="Script" uid="uid://ddwkcosdo33og" path="res://door.gd" id="1_v6xrn"]
 
-[sub_resource type="Animation" id="Animation_ba8gm"]
-resource_name = "open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("door:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -1.6755161, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_v6xrn"]
 length = 0.001
 tracks/0/type = "value"
@@ -48,6 +33,21 @@ tracks/0/keys = {
 "values": [Vector3(0, -1.6755161, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_ba8gm"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.6755161, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0phs7"]
 _data = {
 &"RESET": SubResource("Animation_v6xrn"),
@@ -56,7 +56,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ba8gm"]
-size = Vector3(2.157898, 2.7519226, 3.3748474)
+size = Vector3(2.157898, 2.7519226, 2.3212395)
 
 [node name="Door" type="Node3D"]
 script = ExtResource("1_v6xrn")
@@ -77,5 +77,5 @@ autoplay = "RESET"
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49771118, 0.027267456, -0.60139465)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49771118, 0.027267456, -0.54919624)
 shape = SubResource("BoxShape3D_ba8gm")

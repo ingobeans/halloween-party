@@ -56,7 +56,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ba8gm"]
-size = Vector3(2.157898, 2.7519226, 3.3748474)
+size = Vector3(2.157898, 2.7519226, 2.3106499)
 
 [node name="Door" type="Node3D"]
 script = ExtResource("1_nh3w6")
@@ -77,5 +77,5 @@ autoplay = "RESET"
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49771118, 0.027267456, 0.6616813)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49771118, 0.027267456, 0.55099595)
 shape = SubResource("BoxShape3D_ba8gm")
