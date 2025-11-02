@@ -54,6 +54,11 @@ _subresources={
 "use_external/fallback_path": "res://materials/grass.tres",
 "use_external/path": "uid://c44h13u5123b"
 },
+"Shiny": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/supa_shiny.tres",
+"use_external/path": "uid://k0hw8po3vvqt"
+},
 "Sign": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://materials/sign.tres",

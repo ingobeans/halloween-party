@@ -65,6 +65,7 @@ func start_spook2():
 	get_node("../SwirlierParticles").emitting = true
 	get_node("../SwirlyParticles").visible = true
 	get_node("../SwirlierParticles").visible = true
+	get_node("../RedLight").visible = true
 	set_lights(false)
 	spook_2_timer += 0.000001
 	get_node("../Crescendo").playing = true
@@ -126,6 +127,7 @@ func _process(delta: float) -> void:
 			animation.play("mixamo_com")
 		rotation.y += 4.0 * PI / 60.0
 		set_lights(frame_count % 2 == 0)
+		get_node("../RedLight").visible = frame_count % 2 != 0
 		return
 	if started_now and game_state.started:
 		var animation: AnimationPlayer = skeleton.get_node("AnimationPlayer")
@@ -137,6 +139,7 @@ func _process(delta: float) -> void:
 		get_node("../SwirlyParticles").visible = false
 		get_node("../SwirlierParticles").visible = false
 		get_node("../Pentagram").visible = false
+		get_node("../RedLight").visible = false
 		set_lights(true)
 		for pumpkin in pumpkins:
 			pumpkin.reparent(get_parent())
