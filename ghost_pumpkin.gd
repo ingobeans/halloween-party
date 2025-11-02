@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var area = $Area3D
 @onready var visibility = $VisibleOnScreenNotifier3D
-@onready var model = $Sphere
+@onready var model = $Sphere_001
 
 @export var player: Node3D
 

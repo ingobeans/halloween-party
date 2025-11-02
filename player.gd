@@ -44,8 +44,8 @@ func spook_1():
 			door.open = true
 			door.animation.play("open")
 	for pumpkin in pumpkins:
-		pumpkin.get_node("Sphere_001").visible = true
-		pumpkin.get_node("Sphere").visible = false
+		var mesh: MeshInstance3D = pumpkin.get_node("Sphere_001")
+		mesh.set_surface_override_material(2, null)
 	get_node("../Pentagram").visible = true
 
 func set_lights(on:bool):

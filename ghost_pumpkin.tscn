@@ -10,7 +10,7 @@ size = Vector3(2.3085938, 1.8412476, 2.342041)
 [node name="GhostPumpkin" instance=ExtResource("1_7hr3l")]
 script = ExtResource("2_0hu75")
 
-[node name="Sphere" parent="." index="0"]
+[node name="Sphere_001" parent="." index="0"]
 visible = false
 material_override = ExtResource("2_l7q8h")
 
@@ -23,6 +23,3 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42062378, 0)
 shape = SubResource("BoxShape3D_gvr31")
-
-[node name="Sphere_001" parent="." index="3"]
-visible = false
