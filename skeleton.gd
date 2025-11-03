@@ -1,7 +1,10 @@
 extends CharacterBody3D
 
 var speed = 2.5
-var acceleration = 1.0
+var acceleration = 0.7
+
+var lerp_speed = 0.0
+var lerp_acceleration = 0.24
 
 @export var player: Node3D
 
@@ -13,6 +16,8 @@ func _physics_process(delta: float) -> void:
 	if not chasing:
 		return
 	speed += acceleration * delta
+	lerp_speed += lerp_acceleration * delta
+	global_position = global_position.move_toward(player.global_position,lerp_speed / global_position.distance_to(player.global_position))
 	nav.target_position = player.global_position
 	var next_position = nav.get_next_path_position()
 	var direction = global_position.direction_to(next_position)
