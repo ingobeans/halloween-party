@@ -8,6 +8,9 @@ a short horror game where you are preparing your house for a halloween party, bu
 
 this game was made for hackclub's siege in godot. models and code made exclusively by myself but textures and sound effects have been sourced from the internet.
 
+playthrough / demo video: [here](https://vimeo.com/1132927933?share=copy&fl=sv&fe=ci)
+(its on vimeo so you might need an account to watch because it sucks)
+
 ## controls
 
 WASD for movement and mouse to look around.
